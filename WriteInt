@@ -1,0 +1,21 @@
+class WriteInt{
+	static String writeInt(int n){
+		if(n < 1000 && n > -1000)
+			return "" + n;
+		else{
+			int m = n;
+			if(m < 0)
+				m = m*-1;
+			return writeInt(n/1000) + "," + m%1000;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		int n;
+		while(!Console.endOfFile()){
+			n = Console.readInt();
+			System.out.println(writeInt(n));
+		}
+	}
+}
